@@ -58,10 +58,33 @@ public class StudentController : ControllerBase
             ReadJSON readJson = new ReadJSON();
             List<StudentDetails> studentDetails = new List<StudentDetails>();
             studentDetails = readJson.ReadStudentJSON();
-            StudentDetails student = (from stud in studentDetails where stud.StudentId == id select stud).First();
-            return new Response {
-                message = "Student Sucessfully Updated"
-            };
+            bool updateSuccess = false;
+            foreach (StudentDetails student in studentDetails) {
+                if (student.StudentId == id)
+                {
+                    int index = studentDetails.IndexOf(student);
+                    studentDetails[index].FirstName = studentUpdate.FirstName;
+                    studentDetails[index].LastName = studentUpdate.LastName;
+                    studentDetails[index].KnownAs = studentUpdate.KnownAs;
+                    studentDetails[index].DisplayName = studentUpdate.DisplayName;
+                    studentDetails[index].Gender = studentUpdate.Gender;
+                    studentDetails[index].DateOfBirth = studentUpdate.DateOfBirth;
+                    studentDetails[index].HomeOrOverseas = studentUpdate.HomeOrOverseas;
+                    updateSuccess = true;
+                }
+                
+            }
+
+                if (updateSuccess == false)
+                    throw new Exception("Student Update Error");
+                else {
+                    UpdateJSON updateJSON = new UpdateJSON();
+                    string message = updateJSON.UpdateStudentJSON(studentDetails);
+                    return new Response
+                    {
+                        message = "Student Sucessfully Updated"
+                    };
+            }
         }
         catch (Exception ex)
         {
