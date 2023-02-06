@@ -18,6 +18,7 @@
     <None Remove="Data\" />
     <None Remove="Newtonsoft.Json" />
     <None Remove="Services\" />
+    <None Remove="Models\Response\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -25,5 +26,6 @@
     <Folder Include="Models\Course\" />
     <Folder Include="Data\" />
     <Folder Include="Services\" />
+    <Folder Include="Models\Response\" />
   </ItemGroup>
 </Project>
