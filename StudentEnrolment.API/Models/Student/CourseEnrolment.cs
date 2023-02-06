@@ -21,8 +21,6 @@ namespace StudentEnrolment.API.Models.Student
 
         public string ExpectedEndDate { get; set; }
 
-        public string CourseCode { get; set; }
-
         public Course.Course Course { get; set; }
     }
 }

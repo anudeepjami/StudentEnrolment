@@ -24,6 +24,6 @@ namespace StudentEnrolment.API.Models.Student
 
         public string HomeOrOverseas { get; set; }
 
-        public List<CourseEnrolment> CourseEnrolments { get; set; }
+        public List<CourseEnrolment> CourseEnrolment { get; set; }
     }
 }
