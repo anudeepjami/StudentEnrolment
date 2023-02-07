@@ -22,7 +22,7 @@ namespace StudentEnrolment.API.Services
         {
 
             string path = System.IO.Directory.GetCurrentDirectory();
-            string coursesText = File.ReadAllText(path + "/Data/course.json");
+            string coursesText = File.ReadAllText(path + "/Data/courses.json");
             List<Course> coursesList = JsonConvert.DeserializeObject<List<Course>>(coursesText);
             return coursesList;
 

@@ -1,6 +1,6 @@
 [
   {
-    "StudentId": 77777701,
+    "StudentId": "77777701",
     "FirstName": "Test",
     "LastName": "Test",
     "KnownAs": "Test",
@@ -28,7 +28,7 @@
     ]
   },
   {
-    "StudentId": 77777702,
+    "StudentId": "77777702",
     "FirstName": "Test",
     "LastName": "Test 02",
     "KnownAs": "Test",
@@ -61,7 +61,6 @@
         "ModeOfAttendance": "FULL TIME",
         "EnrolmentStatus": "E",
         "CourseEntryDate": "2020-09-12T00:00:00",
-        "ExpectedEndDate": null,
         "Course": {
           "CourseCode": "UP0000",
           "CourseName": "Used for testing"
@@ -70,13 +69,12 @@
     ]
   },
   {
-    "StudentId": 77777703,
+    "StudentId": "77777703",
     "FirstName": "Test",
     "LastName": "Test 03",
     "KnownAs": "Test",
     "DisplayName": "Test 03 Test 03",
     "DateOfBirth": "1989-03-07T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test6@mail.bcu.ac.uk",
     "NetworkId": "S77777703",
     "HomeOrOverseas": "H",
@@ -89,7 +87,6 @@
         "ModeOfAttendance": "FULL TIME",
         "EnrolmentStatus": "E",
         "CourseEntryDate": "2020-02-12T00:00:00",
-        "ExpectedEndDate": null,
         "Course": {
           "CourseCode": "UP0000",
           "CourseName": "Used for testing"
@@ -98,16 +95,15 @@
     ]
   },
   {
-    "StudentId": 77777704,
-    "FirstName": "A",
-    "LastName": "J",
-    "KnownAs": "string",
-    "DisplayName": "string",
-    "DateOfBirth": "string",
-    "Gender": "string",
+    "StudentId": "77777704",
+    "FirstName": "Test",
+    "LastName": "Test 04",
+    "KnownAs": "Test",
+    "DisplayName": "Test 04 Test 04",
+    "DateOfBirth": "1990-12-11T00:00:00",
     "UniversityEmail": "Test.Test18@mail.bcu.ac.uk",
     "NetworkId": "S77777704",
-    "HomeOrOverseas": "string",
+    "HomeOrOverseas": "H",
     "CourseEnrolment": [
       {
         "EnrolmentId": "77777704/1",
@@ -126,7 +122,7 @@
     ]
   },
   {
-    "StudentId": 77777705,
+    "StudentId": "77777705",
     "FirstName": "Test",
     "LastName": "Test 05",
     "KnownAs": "Test",
@@ -154,13 +150,12 @@
     ]
   },
   {
-    "StudentId": 77777706,
+    "StudentId": "77777706",
     "FirstName": "Test",
     "LastName": "Test 06",
     "KnownAs": "Test",
     "DisplayName": "Test 06 Test 06",
     "DateOfBirth": "1994-06-15T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test21@mail.bcu.ac.uk",
     "NetworkId": "S77777706",
     "HomeOrOverseas": "H",
@@ -182,13 +177,12 @@
     ]
   },
   {
-    "StudentId": 77777707,
+    "StudentId": "77777707",
     "FirstName": "Test",
     "LastName": "Test 07",
     "KnownAs": "Test",
     "DisplayName": "Test 07 Test 07",
     "DateOfBirth": "1996-09-19T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test2@mail.bcu.ac.uk",
     "NetworkId": "S77777707",
     "HomeOrOverseas": "H",
@@ -210,13 +204,12 @@
     ]
   },
   {
-    "StudentId": 77777708,
+    "StudentId": "77777708",
     "FirstName": "Test",
     "LastName": "Test 08",
     "KnownAs": "Test",
     "DisplayName": "Test 08 Test 08",
     "DateOfBirth": "1996-03-26T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test11@mail.bcu.ac.uk",
     "NetworkId": "S77777708",
     "HomeOrOverseas": "H",
@@ -238,13 +231,12 @@
     ]
   },
   {
-    "StudentId": 77777709,
+    "StudentId": "77777709",
     "FirstName": "Test",
     "LastName": "Test 09",
     "KnownAs": "Test",
     "DisplayName": "Test 09 Test 09",
     "DateOfBirth": "1997-08-30T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test12@mail.bcu.ac.uk",
     "NetworkId": "S77777709",
     "HomeOrOverseas": "H",
@@ -266,13 +258,12 @@
     ]
   },
   {
-    "StudentId": 77777710,
+    "StudentId": "77777710",
     "FirstName": "Test",
     "LastName": "Test 10",
     "KnownAs": "Test",
     "DisplayName": "Test 10 Test 10",
     "DateOfBirth": "1998-07-01T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test13@mail.bcu.ac.uk",
     "NetworkId": "S77777710",
     "HomeOrOverseas": "H",
@@ -294,13 +285,12 @@
     ]
   },
   {
-    "StudentId": 77777711,
+    "StudentId": "77777711",
     "FirstName": "Test",
     "LastName": "Test 11",
     "KnownAs": "Test",
     "DisplayName": "Test 11 Test 11",
     "DateOfBirth": "1991-10-13T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test17@mail.bcu.ac.uk",
     "NetworkId": "S77777711",
     "HomeOrOverseas": "H",
@@ -322,13 +312,12 @@
     ]
   },
   {
-    "StudentId": 77777712,
+    "StudentId": "77777712",
     "FirstName": "Test",
     "LastName": "Test 12",
     "KnownAs": "Test",
     "DisplayName": "Test 12 Test 12",
     "DateOfBirth": "1999-03-25T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test7@mail.bcu.ac.uk",
     "NetworkId": "S77777712",
     "HomeOrOverseas": "H",
@@ -350,13 +339,12 @@
     ]
   },
   {
-    "StudentId": 77777713,
+    "StudentId": "77777713",
     "FirstName": "Test",
     "LastName": "Test 13",
     "KnownAs": "Test",
     "DisplayName": "Test 13 Test 13",
     "DateOfBirth": "1993-02-17T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test8@mail.bcu.ac.uk",
     "NetworkId": "S77777713",
     "HomeOrOverseas": "H",
@@ -374,17 +362,17 @@
           "CourseCode": "UP0000",
           "CourseName": "Used for testing"
         }
+
       }
     ]
   },
   {
-    "StudentId": 77777714,
+    "StudentId": "77777714",
     "FirstName": "Test",
     "LastName": "Test 14",
     "KnownAs": "Test",
     "DisplayName": "Test 14 Test 14",
     "DateOfBirth": "1990-08-17T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test14@mail.bcu.ac.uk",
     "NetworkId": "S77777714",
     "HomeOrOverseas": "H",
@@ -406,13 +394,12 @@
     ]
   },
   {
-    "StudentId": 77777715,
+    "StudentId": "77777715",
     "FirstName": "Test",
     "LastName": "Test 15",
     "KnownAs": "Test",
     "DisplayName": "Test 15 Test 15",
     "DateOfBirth": "1998-06-13T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test15@mail.bcu.ac.uk",
     "NetworkId": "S77777715",
     "HomeOrOverseas": "H",
@@ -434,13 +421,12 @@
     ]
   },
   {
-    "StudentId": 77777716,
+    "StudentId": "77777716",
     "FirstName": "Test",
     "LastName": "Test 16",
     "KnownAs": "Test",
     "DisplayName": "Test 16 Test 16",
     "DateOfBirth": "1997-01-15T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test5@mail.bcu.ac.uk",
     "NetworkId": "S77777716",
     "HomeOrOverseas": "H",
@@ -462,13 +448,12 @@
     ]
   },
   {
-    "StudentId": 77777717,
+    "StudentId": "77777717",
     "FirstName": "Test",
     "LastName": "Test 17",
     "KnownAs": "Test",
     "DisplayName": "Test 17 Test 17",
     "DateOfBirth": "1996-04-16T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test10@mail.bcu.ac.uk",
     "NetworkId": "S77777717",
     "HomeOrOverseas": "H",
@@ -490,13 +475,12 @@
     ]
   },
   {
-    "StudentId": 77777718,
+    "StudentId": "77777718",
     "FirstName": "Test",
     "LastName": "Test 18",
     "KnownAs": "Test",
     "DisplayName": "Test 18 Test 18",
     "DateOfBirth": "1998-08-02T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test9@mail.bcu.ac.uk",
     "NetworkId": "S77777718",
     "HomeOrOverseas": "H",
@@ -518,13 +502,12 @@
     ]
   },
   {
-    "StudentId": 77777719,
+    "StudentId": "77777719",
     "FirstName": "Test",
     "LastName": "Test 19",
     "KnownAs": "Test",
     "DisplayName": "Test 19 Test 19",
     "DateOfBirth": "1999-11-12T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test16@mail.bcu.ac.uk",
     "NetworkId": "S77777719",
     "HomeOrOverseas": "H",
@@ -546,13 +529,12 @@
     ]
   },
   {
-    "StudentId": 77777720,
+    "StudentId": "77777720",
     "FirstName": "Test",
     "LastName": "Test 20",
     "KnownAs": "Test",
     "DisplayName": "Test 20 Test 20",
     "DateOfBirth": "1998-09-09T00:00:00",
-    "Gender": null,
     "UniversityEmail": "Test.Test4@mail.bcu.ac.uk",
     "NetworkId": "S77777720",
     "HomeOrOverseas": "H",
@@ -570,11 +552,12 @@
           "CourseCode": "UP0000",
           "CourseName": "Used for testing"
         }
+
       }
     ]
   },
   {
-    "StudentId": 77777777,
+    "StudentId": "77777777",
     "FirstName": "Cict",
     "LastName": "Student 2",
     "KnownAs": "Cict",

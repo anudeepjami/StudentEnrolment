@@ -1,0 +1,170 @@
+﻿@model IEnumerable<StudentEnrolmentWeb.Models.StudentDetailsMVC>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a href="@Url.Action("AddOrEdit","Studentdetails")" class="btn btn-default"><i class="fa fa-plus"></i> Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KnownAs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UniversityEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NetworkId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeOrOverseas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseEnrolment[0].EnrolmentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseEnrolment[0].AcademicYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseEnrolment[0].YearOfStudy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseEnrolment[0].Occurrence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseEnrolment[0].ModeOfAttendance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseEnrolment[0].EnrolmentStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseEnrolment[0].CourseEntryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseEnrolment[0].ExpectedEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseEnrolment[0].Course.CourseCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseEnrolment[0].Course.CourseName)
+            </th>
+            <th>Actions</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KnownAs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UniversityEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetworkId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeOrOverseas)
+            </td>
+            <tbody>
+                    @foreach (var category in item.CourseEnrolment)
+                    {
+                        <td>
+                        @Html.DisplayFor(modelItem=>category.EnrolmentId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem=>category.AcademicYear)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem=>category.YearOfStudy)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem=>category.Occurrence)
+                        </td>
+                         <td>
+                            @Html.DisplayFor(modelItem=>category.ModeOfAttendance)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem=>category.EnrolmentStatus)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem=>category.CourseEntryDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem=>category.ExpectedEndDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem=>category.Course.CourseCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem=>category.Course.CourseName)
+                        </td>
+                    }
+            </tbody>
+        <td>
+            <a href="@Url.Action("AddOrEdit", "Studentdetails", new { id = item.StudentId})" class="btn btn-default"><i class="fa fa-pencil"></i>  Edit</a>
+            <a onclick="Delete(@item.StudentId)" class="btn btn-default"><i class="fa fa-trash"></i>  Delete</a>
+        </td>
+        </tr>
+}
+
+</table>
+
+@section scripts{
+    <script>
+        $(function () {
+            var successMessage = '@TempData["SuccessMessage"]'
+            if (successMessage != '')
+                alertify.success(successMessage);
+        });
+
+        function Delete(id) {
+            alertify.confirm('University Of Birhmingham Student Logs', 'Are You Sure to Delete this Record ?', function () {
+                window.location.href = '@Url.Action("Delete","Studentdetails")/' + id;
+            }, null);
+        }
+    </script>
+    }
