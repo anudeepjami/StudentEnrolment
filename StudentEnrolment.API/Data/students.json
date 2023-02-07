@@ -360,6 +360,20 @@
           "CourseCode": "UP0000",
           "CourseName": "Used for testing"
         }
+      },
+      {
+        "EnrolmentId": "77777713/2",
+        "AcademicYear": "2020/1",
+        "YearOfStudy": "1",
+        "Occurrence": "SEP",
+        "ModeOfAttendance": "FULL TIME",
+        "EnrolmentStatus": "E",
+        "CourseEntryDate": "2020-09-01T00:00:00",
+        "ExpectedEndDate": "2021-06-20T00:00:00",
+        "Course": {
+          "CourseCode": "US0206",
+          "CourseName": "Used for testing"
+        }
       }
     ]
   },
@@ -386,6 +400,20 @@
         "ExpectedEndDate": "2021-06-20T00:00:00",
         "Course": {
           "CourseCode": "UP0000",
+          "CourseName": "Used for testing"
+        }
+      },
+      {
+        "EnrolmentId": "77777714/2",
+        "AcademicYear": "2020/1",
+        "YearOfStudy": "1",
+        "Occurrence": "SEP",
+        "ModeOfAttendance": "FULL TIME",
+        "EnrolmentStatus": "E",
+        "CourseEntryDate": "2020-09-01T00:00:00",
+        "ExpectedEndDate": "2021-06-20T00:00:00",
+        "Course": {
+          "CourseCode": "US0206",
           "CourseName": "Used for testing"
         }
       }

@@ -29,16 +29,15 @@ public class StudentController : ControllerBase
     }
 
     [HttpGet]
-    [Route("{id:int}")]
-    public StudentDetails GetStudentById(int id)
+    [Route("{StudentId:int}")]
+    public StudentDetails GetStudentById(int StudentId)
     {
         try
         {
-            int i = id;
             ReadJSON readJson = new ReadJSON();
             List<StudentDetails> studentDetails = new List<StudentDetails>();
             studentDetails = readJson.ReadStudentJSON();
-            StudentDetails student = (from stud in studentDetails where stud.StudentId == id select stud).First();
+            StudentDetails student = (from stud in studentDetails where stud.StudentId == StudentId select stud).First();
             return student;
         }
         catch (Exception ex) {
@@ -49,18 +48,17 @@ public class StudentController : ControllerBase
 
     [HttpPut]
     [Route("{StudentId:int}")]
-    public Response UpdateStudentById(
+    public Response UpdateStudentDetailsById(
         [FromRoute] int StudentId,
         [FromBody] UpdateStudentDetails studentUpdate
     )
     {
         try
         {
-            int i = StudentId;
             ReadJSON readJson = new ReadJSON();
             List<StudentDetails> studentDetails = new List<StudentDetails>();
             studentDetails = readJson.ReadStudentJSON();
-            bool updateSuccess = false;
+            bool canBeUpdated = false;
             foreach (StudentDetails student in studentDetails) {
                 if (student.StudentId == StudentId)
                 {
@@ -73,9 +71,9 @@ public class StudentController : ControllerBase
                     studentDetails[index].Gender = studentUpdate.Gender;
                     studentDetails[index].HomeOrOverseas = studentUpdate.HomeOrOverseas;
                     };
-                    updateSuccess = true;
+                    canBeUpdated = true;
                 }
-                if (updateSuccess == false)
+                if (canBeUpdated == false)
                     throw new Exception("Student Update Error");
                 else {
                     UpdateJSON updateJSON = new UpdateJSON();
@@ -84,6 +82,136 @@ public class StudentController : ControllerBase
                     {
                         message = "Student Sucessfully Updated"
                     };
+            }
+        }
+        catch (Exception ex)
+        {
+            return new Response
+            {
+                message = ex.Message
+            };
+        }
+
+    }
+
+    [HttpDelete]
+    [Route("{StudentId:int}/{EnrolmentId:int}")]
+    public Response DeleteStudentEnrollentByStudentIdEnrollmentId(
+                [FromRoute] int StudentId,
+                [FromRoute] int EnrolmentId)
+    {
+        try
+        {
+            ReadJSON readJson = new ReadJSON();
+            List<StudentDetails> studentDetails = new List<StudentDetails>();
+            studentDetails = readJson.ReadStudentJSON();
+            bool canBeUpdated = false;
+            int studentIndex = 0;
+            int enrolmentIndex = 0;
+            foreach (StudentDetails student in studentDetails)
+            {
+                if (student.StudentId == StudentId)
+                {
+                    studentIndex = studentDetails.IndexOf(student);
+                    foreach (CourseEnrolment enrolment in studentDetails[studentIndex].CourseEnrolment)
+                    {
+                        string studentEnrolmentId = StudentId.ToString() + "/" + EnrolmentId.ToString();
+                        if (enrolment.EnrolmentId == studentEnrolmentId)
+                        {
+                            enrolmentIndex = studentDetails[studentIndex].CourseEnrolment.IndexOf(enrolment);
+                            canBeUpdated = true;
+                        }
+                    }
+                }
+            }
+            if (canBeUpdated == false)
+                throw new Exception("Student Enrollment Delete Error");
+            else
+            {
+                studentDetails[studentIndex].CourseEnrolment.RemoveAt(enrolmentIndex);
+                UpdateJSON updateJSON = new UpdateJSON();
+                string message = updateJSON.UpdateStudentJSON(studentDetails);
+                return new Response
+                {
+                    message = "Student Enrollment Deleted Sucessfully "
+                };
+            }
+        }
+        catch (Exception ex)
+        {
+            return new Response
+            {
+                message = ex.Message
+            };
+        }
+
+    }
+
+    [HttpPost]
+    [Route("{StudentId:int}")]
+    public Response AddStudentEnrollentByStudentIdEnrollmentId(
+                [FromRoute] int StudentId,
+                [FromBody] CourseEnrolment AddCourse)
+    {
+        try
+        {
+            ReadJSON readJson = new ReadJSON();
+            List<StudentDetails> studentDetails = new List<StudentDetails>();
+            studentDetails = readJson.ReadStudentJSON();
+            List<Course> coursesDetails = new List<Course>();
+            coursesDetails = readJson.ReadCoursesJson();
+            bool canBeUpdated = false;
+            int studentIndex = 0;
+            int newEnrolmentId = 0;
+            foreach (StudentDetails student in studentDetails)
+            {
+                if (student.StudentId == StudentId)
+                {
+                    studentIndex = studentDetails.IndexOf(student);
+                    int lastEnrolmentId = 0;
+                    foreach (CourseEnrolment enroledCourse in studentDetails[studentIndex].CourseEnrolment)
+                    {
+                        lastEnrolmentId = Int32.Parse(enroledCourse.EnrolmentId.Split('/')[1]);
+                        newEnrolmentId = lastEnrolmentId >= newEnrolmentId ? lastEnrolmentId : newEnrolmentId;
+                        if (enroledCourse.Course.CourseCode == AddCourse.Course.CourseCode) {
+                            return new Response
+                            {
+                                message = "Course Already Exists for user"
+                            };
+                        }
+                    }
+                }
+                if (studentDetails.IndexOf(student) == (studentDetails.Count - 1)) {
+                    foreach (Course course in coursesDetails)
+                    {
+                        if (course.CourseCode == AddCourse.Course.CourseCode)
+                        {
+                            canBeUpdated = true;
+                        }
+                        if (coursesDetails.IndexOf(course) == (coursesDetails.Count - 1) && canBeUpdated == false)
+                        {
+                            return new Response
+                            {
+                                message = "Course Doesn't Exist"
+                            };
+                        }
+                    }
+                }
+            }
+
+            if (canBeUpdated == false)
+                throw new Exception("Student Enrollment Add Error");
+            else
+            {
+                CourseEnrolment courseEnrolment= AddCourse;
+                courseEnrolment.EnrolmentId = studentDetails[studentIndex].StudentId.ToString() + "/" + (newEnrolmentId + 1).ToString();
+                studentDetails[studentIndex].CourseEnrolment.Add(courseEnrolment);
+                UpdateJSON updateJSON = new UpdateJSON();
+                string message = updateJSON.UpdateStudentJSON(studentDetails);
+                return new Response
+                {
+                    message = "Student Enrollment Added Sucessfully "
+                };
             }
         }
         catch (Exception ex)
